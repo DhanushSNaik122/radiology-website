@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Disease</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        select, button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    
+
+    <section id="home" class="home">
+
+        <div class="row">
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Select Disease</title>
+                
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        background-color: #f0f8ff;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100vh;
+                        margin: 0;
+                    }
+                    form {
+                        background: white;
+                        padding: 20px;
+                        border-radius: 10px;
+                        text-align: center;
+                        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+                    }
+                    h1 {
+                        margin-bottom: 20px;
+                    }
+                    select, button {
+                        margin: 10px 0;
+                        padding: 10px;
+                        width: 100%;
+                    }
+                    button {
+                        background-color: #007BFF;
+                        color: white;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    }
+                    button:hover {
+                        background-color: #0056b3;
+                    }
+                </style>
+            </head>
+            <body>
+                
+                <form action="/predict" method="post" enctype="multipart/form-data">
+                    <h1>Select Disease and Upload X-Ray</h1>
+                    <label for="model">Choose a Disease:</label>
+                    <select name="model" id="model" required>
+                        {% for model in models %}
+                            <option value="{{ model }}">{{ model.replace('_', ' ').title() }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="file">Upload X-Ray Image:</label>
+                    <input type="file" name="file" accept="image/*" required>
+                    <button type="submit">Predict</button>
+                </form>
+            </body>
+            </html>
+            
+          
